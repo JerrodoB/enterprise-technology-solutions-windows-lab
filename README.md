@@ -1,58 +1,46 @@
 # Enterprise Technology Solutions Windows Lab
 
-> A portfolio-driven enterprise Windows Server administration project focused on Active Directory, PowerShell, enterprise infrastructure, documentation, and operational excellence.
+> A hands-on enterprise Windows Server administration lab documenting Active Directory, identity administration, infrastructure standards, PowerShell, troubleshooting, and operational best practices.
 
----
+## Project Overview
 
-## Overview
+The **Enterprise Technology Solutions Windows Lab** simulates the responsibilities of a Windows Systems Administrator supporting an enterprise environment.
 
-The **Enterprise Technology Solutions Windows Lab** is a long-term professional development project designed to simulate the responsibilities of a Windows Systems Administrator working in an enterprise environment.
+Rather than presenting isolated exercises, this repository documents a growing infrastructure environment through:
 
-Rather than performing isolated lab exercises, this project follows enterprise administration practices including:
-
-- Infrastructure design
+- Infrastructure assessment and design
 - Active Directory administration
-- Identity lifecycle management
-- PowerShell automation
-- Documentation
-- Change validation
-- Version control using Git
-- Technical portfolio development
+- Identity and access management
+- PowerShell administration and automation
+- Configuration validation
+- Technical documentation
+- Git and GitHub version control
+- Enterprise operational standards
 
-Every configuration change is documented, validated, and committed to version control.
+Each change is designed, implemented, validated, documented, and maintained through a controlled Git workflow.
 
----
+## Professional Objective
 
-## Professional Objectives
-
-This project supports my transition from a **Business Systems Analyst** into a **Windows Systems Administrator**, while building the foundation required for future roles in:
-
-- Windows Infrastructure Engineering
-- Hybrid Infrastructure Administration
-- Enterprise Infrastructure Solutions Architecture
-
----
+This project supports my transition from **Business Systems Analyst** to **Windows Systems Administrator** while building the technical and architectural foundation required for future infrastructure engineering and enterprise solutions architecture roles.
 
 ## Lab Environment
 
 | Component | Configuration |
-|------------|---------------|
-| Virtualization Platform | VMware Workstation |
-| Operating System | Windows Server 2025 Standard Evaluation |
-| Primary Server | SERVER01 |
-| Active Directory Domain | `corp.enterpriseit.local` |
+|---|---|
+| Virtualization platform | VMware Workstation |
+| Operating system | Windows Server 2025 Standard Evaluation |
+| Primary server | `SERVER01` |
+| Active Directory domain | `corp.enterpriseit.local` |
 | Organization | Enterprise Technology Solutions |
-| Directory Services | Active Directory Domain Services |
-| DNS | Active Directory Integrated |
-| Administration Tools | Server Manager, ADUC, PowerShell |
-| Version Control | Git |
-| Repository Hosting | GitHub |
+| Directory services | Active Directory Domain Services |
+| DNS | Active Directory-integrated DNS |
+| Administration tools | Server Manager, ADUC, and PowerShell |
+| Version control | Git |
+| Repository hosting | GitHub |
 
----
+## Enterprise Directory Structure
 
-# Enterprise Infrastructure
-
-## Organizational Unit Structure
+The Active Directory environment uses a purpose-built Organizational Unit structure designed to support delegated administration, Group Policy, security boundaries, identity lifecycle management, and future expansion.
 
 ```text
 corp.enterpriseit.local
@@ -70,66 +58,47 @@ corp.enterpriseit.local
     └── Workstations
 ```
 
-The OU structure was designed to support:
+### Organizational Unit Implementation
 
-- Delegated administration
-- Group Policy
-- Security boundaries
-- Lifecycle management
-- Scalability
-- Enterprise operational standards
+![Final Active Directory Organizational Unit hierarchy](screenshots/module-08-ou-implementation/09-final-ou-hierarchy.png)
 
----
+## Documentation
 
-## Security Group Design
+### Module Documentation
 
-Current Global Security Groups:
+| Document | Focus |
+|---|---|
+| [Project Overview](docs/modules/01-project-overview.md) | Project purpose, objectives, and environment |
+| [SERVER01 Assessment](docs/modules/02-server01-assessment.md) | Server roles, configuration, and baseline assessment |
+| [Active Directory OU Design](docs/modules/03-active-directory-ou-design.md) | Organizational Unit architecture and design decisions |
+| [User Account Administration](docs/modules/04-user-account-administration.md) | User provisioning and identity administration |
+| [Security Groups and RBAC](docs/modules/05-security-groups-and-rbac.md) | Security groups, authorization, and role-based access control |
 
-```text
-GG_Employees
-GG_IT
-GG_HR
-GG_Finance
-GG_Executives
-GG_Contractors
-```
+### Repository Standards
 
-The project follows Microsoft's recommended access control model.
+| Document | Purpose |
+|---|---|
+| [Documentation Standards](docs/standards/documentation-standards.md) | Requirements for consistent technical documentation |
+| [Naming Conventions](docs/standards/naming-conventions.md) | Standards for accounts, groups, files, and infrastructure objects |
+| [Contributing Guidelines](CONTRIBUTING.md) | Repository contribution and change workflow |
+| [Changelog](CHANGELOG.md) | Record of notable project changes |
 
-```text
-Permissions
-        ↑
-Domain Local Groups
-        ↑
-Global Groups
-        ↑
-User Accounts
-```
-
-Future modules will implement the complete AGDLP model.
-
----
-
-# Skills Demonstrated
-
-Current technical competencies include:
+## Skills Demonstrated
 
 - Windows Server administration
-- Active Directory administration
-- Organizational Unit design
+- Active Directory Domain Services
+- Organizational Unit design and implementation
 - User account provisioning
-- Security Group administration
-- Role-Based Access Control (RBAC)
+- Security group administration
+- Role-Based Access Control
 - DNS administration
-- Enterprise documentation
 - PowerShell administration
-- Git version control
-- Infrastructure validation
-- Troubleshooting methodology
+- Infrastructure assessment and validation
+- Technical documentation
+- Git and GitHub version control
+- Enterprise troubleshooting methodology
 
----
-
-# PowerShell
+## PowerShell
 
 PowerShell commands introduced during the project include:
 
@@ -137,209 +106,97 @@ PowerShell commands introduced during the project include:
 Import-Module ActiveDirectory
 
 Get-ADUser
-
 New-ADUser
-
 Set-ADUser
-
 Enable-ADAccount
-
 Set-ADAccountPassword
-
 Get-ADOrganizationalUnit
 ```
 
-Future modules will expand into PowerShell scripting and automation.
+Future modules will expand from individual administrative commands into repeatable scripts and automation.
 
----
-
-# Repository Structure
+## Repository Structure
 
 ```text
-enterprise-technology-solutions-windows-lab
-│
+enterprise-technology-solutions-windows-lab/
 ├── README.md
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
-├── LICENSE
-├── .gitignore
-│
-├── docs
-│   ├── modules
-│   ├── architecture
-│   ├── standards
-│   ├── decisions
-│   ├── troubleshooting
-│   └── references
-│
-├── powershell
-│   ├── active-directory
-│   └── server-administration
-│
-├── screenshots
-│
-├── diagrams
-│
-├── reports
-│
-└── labs
+├── docs/
+│   ├── architecture/
+│   ├── decisions/
+│   ├── modules/
+│   ├── references/
+│   ├── standards/
+│   └── troubleshooting/
+├── powershell/
+│   ├── active-directory/
+│   └── server-administration/
+├── screenshots/
+├── diagrams/
+├── reports/
+└── labs/
 ```
 
----
-
-# Documentation
-
-The repository separates operational documentation into dedicated categories.
-
-| Directory | Purpose |
-|------------|----------|
-| docs/modules | Module documentation |
-| docs/architecture | Infrastructure architecture |
-| docs/standards | Enterprise standards |
-| docs/decisions | Technical decision records |
-| docs/troubleshooting | Troubleshooting knowledge base |
-| docs/references | Technical references |
-| screenshots | Configuration evidence |
-| diagrams | Infrastructure diagrams |
-| reports | Generated reports |
-| powershell | Administrative scripts |
-
----
-
-# Current Progress
+## Current Progress
 
 Completed work includes:
 
 - Windows Server virtual lab deployment
 - Enterprise Active Directory assessment
-- Organizational Unit design
-- Organizational Unit implementation
-- Enterprise user hierarchy
-- Active Directory PowerShell module
-- User provisioning
-- Security Group creation
-- Git installation
-- Git repository initialization
-- Repository structure creation
+- Organizational Unit design and implementation
+- Enterprise user hierarchy creation
+- Active Directory PowerShell module validation
+- User account provisioning
+- Security group creation
+- Repository standards and naming conventions
+- GitHub repository publication and protection
 
----
+### Current Focus
 
-# Current Module
+The current project work focuses on:
 
-The current module focuses on:
-
-- Enterprise Identity Administration
+- Enterprise identity administration
 - User lifecycle management
-- Security Groups
+- Security groups
 - Role-Based Access Control
-- Authentication vs Authorization
+- Authentication and authorization
 - PowerShell administration
 
----
+## Planned Development
 
-# Planned Development
+Future modules will address:
 
-Future project modules include:
-
-- AGDLP implementation
+- AGDLP access-control implementation
 - Group Policy
-- File Servers
+- File servers and shared folders
 - NTFS permissions
-- Shared folders
-- DFS
+- Distributed File System
 - DHCP
 - Certificate Services
 - PowerShell automation
 - Backup and recovery
 - Windows security hardening
-- Monitoring
+- Infrastructure monitoring
 - Enterprise troubleshooting
 - Azure hybrid integration
 
----
+## Methodology
 
-# Methodology
+This project uses small, controlled changes that are individually documented and validated. Repository updates follow a professional feature-branch workflow:
 
-This project follows the enterprise administration workflow below.
+1. Create a focused branch.
+2. Make and validate the change.
+3. Commit the completed work.
+4. Publish the branch.
+5. Review the change through a pull request.
+6. Squash-merge the approved change into `main`.
+7. Synchronize the local repository.
 
-```text
-Design
-    ↓
-Implement
-    ↓
-Validate
-    ↓
-Document
-    ↓
-Commit
-```
-
-This methodology follows the **Small Batches Principle** described in *The Practice of System and Network Administration*.
-
----
-
-# Reference Material
+## Reference Material
 
 Primary reference:
 
-> The Practice of System and Network Administration  
-> Volume 1 – DevOps and Other Best Practices for Enterprise IT  
-> Third Edition
+*The Practice of System and Network Administration, Volume 1: DevOps and Other Best Practices for Enterprise IT, Third Edition*
 
-Additional references include Microsoft Learn documentation and other enterprise infrastructure resources.
-
----
-
-# Security Notice
-
-This repository intentionally excludes:
-
-- Passwords
-- Credentials
-- Private keys
-- Proprietary company information
-- Confidential production configurations
-- Personally identifiable production data
-
-All infrastructure contained in this repository is intended solely for educational and professional portfolio purposes.
-
----
-
-# Professional Development Roadmap
-
-```text
-Windows Systems Administration
-            ↓
-Linux Systems Administration
-            ↓
-Azure Administration
-            ↓
-Infrastructure Engineering
-            ↓
-Enterprise Infrastructure Solutions Architecture
-```
-
----
-
-# About the Author
-
-**Jerrodo Butler**
-
-Business Systems Analyst, MBA Candidate, and Enterprise Infrastructure professional focused on developing expertise in:
-
-- Enterprise Windows Administration
-- Infrastructure Engineering
-- Systems Thinking
-- Enterprise Architecture
-- Technical Documentation
-- Technology Strategy
-
----
-
-## Repository Status
-
-**Current Status**
-
-🟢 Active Development
-
-Project modules, documentation, PowerShell automation, and enterprise infrastructure implementations are continuously being expanded as part of the Enterprise Systems Administration Development Program (ESDP).
+Additional guidance is drawn from Microsoft Learn documentation and enterprise infrastructure administration resources.
