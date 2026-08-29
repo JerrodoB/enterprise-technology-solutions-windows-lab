@@ -300,3 +300,33 @@ Legacy DNS configuration associated with the former `192.168.1.0/24` network was
 * [DHCP scope options](../../screenshots/module-12-enterprise-dns-dhcp-administration/12-dhcp-scope-options.png)
 * [Final DNS configuration](../../screenshots/module-12-enterprise-dns-dhcp-administration/13-final-dns-configuration.png)
 * [Active CLIENT01 DHCP reservation](../../screenshots/module-12-enterprise-dns-dhcp-administration/14-client01-active-dhcp-reservation.png)
+
+
+### Entry — Enterprise Windows Server Operations, Monitoring, and Maintenance
+
+**Date:** August 2026
+
+**System:** SERVER01 — `corp.enterpriseit.local`
+
+**Activity:** Completed a structured Windows Server operational health and maintenance assessment.
+
+**Work performed:**
+
+- Reviewed Server Manager operational health and installed server roles.
+- Verified critical Windows services supporting AD DS, DNS, DHCP, SMB, and FSRM.
+- Examined service dependencies and recovery behavior.
+- Reviewed and filtered Windows Event Logs.
+- Correlated FSRM warning Event ID `12317` with current service state.
+- Used Task Manager and Resource Monitor for real-time CPU, memory, disk, and network visibility.
+- Configured Performance Monitor counters for CPU, memory, disk utilization, disk latency, and network throughput.
+- Created and ran the `SERVER01 Performance Baseline` Data Collector Set.
+- Established a recorded normal-light-workload performance baseline.
+- Verified C: volume capacity and health.
+- Used PowerShell to verify critical infrastructure service status.
+- Reviewed Task Scheduler operational functionality.
+- Assessed Windows Update maintenance requirements.
+- Installed pending security updates through a controlled maintenance process.
+- Restarted SERVER01 and completed post-maintenance service validation.
+- Confirmed Windows Update reported the server as up to date.
+
+**Result:** SERVER01 was assessed as operationally healthy within the ESDP lab workload. Critical infrastructure services returned successfully after maintenance, storage remained healthy with substantial free capacity, and recorded performance data showed no evidence of resource pressure during the baseline period.
